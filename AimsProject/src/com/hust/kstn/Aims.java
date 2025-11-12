@@ -10,7 +10,7 @@ public class Aims {
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", 
                                 "George Lucas", 87, 24.95);
 
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99);
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", "Guy Ritchie", 88, 18.99);
 
         cart.addDVD(dvd1);
         cart.addDVD(dvd2);
