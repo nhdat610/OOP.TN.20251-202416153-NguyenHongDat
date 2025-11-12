@@ -1,0 +1,5 @@
+- Khi thêm phương thức addDVD(DigitalVideoDisc... discs) thì sẽ có lỗi khi biên dịch:
+	Duplicate method addDVD(DigitalVideoDisc[]) in type Cart
+	Duplicate method addDVD(DigitalVideoDisc...) in type Cart
+- Nguyên nhân: DigitalVideoDisc... được coi là 1 mảng nên 2 phương thức addDVD(DigitalVideoDisc[] discs) và addDVD(DigitalVideoDisc... discs) có cùng chữ kí.
+- Cách giải quyết của em: Bỏ phương thức addDVD(DigitalVideoDisc[] discs), giữ lại phương thức addDVD(DigitalVideoDisc... discs).
