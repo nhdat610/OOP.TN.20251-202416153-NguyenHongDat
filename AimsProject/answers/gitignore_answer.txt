@@ -1,0 +1,9 @@
+- Những đường dẫn .settings, bin, ... nên được thêm vào .gitignore vì:
+	+ Chúng không phải mã nguồn, nếu không thêm chúng vào .gitignore thì repo sẽ bị rối.
+	+ Các file, thư mục này có thể khác nhau trên các máy khác nhau, vì vậy có thể gây lỗi khi pull về máy.
+- Nếu sử dụng những công cụ khác để lập trình Java (ví dụ em đang dùng VS code) thì thêm .vscode/, lib/
+- Nếu đã lỡ commmit các file tạm lên Git, nhưng sau đó đã thêm chúng vào .gitignore và muốn Git ngừng theo dõi chúng mà không xóa khỏi máy, em cần:
+	+ Thêm các đường dẫn vào .gitignore
+	+ Dùng lệnh git rm -r --cached .
+	+ Sau đó git add . và git commit -m "Them file tam vao .gitignore va ngung theo doi chung"
+	+ Đẩy commit lên remote.
