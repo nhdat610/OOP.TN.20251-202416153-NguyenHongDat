@@ -72,10 +72,16 @@ public class Cart {
     }
 
     public void print() {
-        System.out.println("=== Total items in cart: " + qtyOrdered + " === ");
-        System.out.println("=== All items in cart ===");
-        for (int i = 0; i < qtyOrdered; i++)
-            System.out.println("[Title]: " + itemsInCart[i].getTitle() + ", [Cost]: " + itemsInCart[i].getCost());
-        System.out.println("[Total cost]: " + this.calculateTotalCost());
+        System.out.println("=========================THE CURRENT CART ====================");
+        if (qtyOrdered == 0)
+            System.out.println("The cart is empty");
+        else {
+            System.out.println("Total items: " + qtyOrdered);
+            for (DigitalVideoDisc item : itemsInCart)
+                if (item != null)
+                    System.out.println("- " + item.toString());
+            System.out.println("Subtotal: " + calculateTotalCost() + "$");
+        }
+        System.out.println("==============================================================");
     }
 }
