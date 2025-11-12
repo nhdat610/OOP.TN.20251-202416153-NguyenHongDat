@@ -1,0 +1,1 @@
+Từ khóa super trong mã nguồn của lớp Book được dùng để tái sử dụng đoạn mã nguồn (constructor, phương thức toString()) của lớp cha trực tiếp trong lớp con.

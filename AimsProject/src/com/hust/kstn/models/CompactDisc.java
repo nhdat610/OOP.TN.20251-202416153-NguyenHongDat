@@ -1,32 +1,13 @@
 package com.hust.kstn.models;
 
-public class CompactDisc {
-    private static int nbCompactDiscs = 0;
-    private String id;
-    private String title;
-    private String category;
-    private double cost;
+public class CompactDisc extends Disc {
     private String[] artists;
     private String[] directors;
     private Track[] tracks = new Track[30];
-    private int trackCount;
-
-    private static String generateId() {
-        nbCompactDiscs++;
-        int a = nbCompactDiscs;
-        char[] id = new char[6];
-        for (int i = 5; i >= 0; i--) {
-            id[i] = (char)('0' + a % 10);
-            a /= 10;
-        }
-        return new String(id);
-    }
+    private int trackCount = 0;
 
     public CompactDisc(String title, String category, double cost, String[] artists, String[] directors, Track[] tracks) {
-        this.id = generateId();
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
+        super(title, cost, category);
 
         this.artists = new String[artists.length];
         for (int i = 0; i < artists.length; i++)
@@ -43,22 +24,6 @@ public class CompactDisc {
         }
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public double getCost() {
-        return cost;
-    }
-
     public int totalLength() {
         int length = 0;
         for (int i = 0; i < trackCount; i++)
@@ -71,10 +36,7 @@ public class CompactDisc {
         if (trackCount == 0) {
             return "The CD is empty";
         }
-        String result = "Compact Disc[" + this.id + "]["
-            + this.title + "]["
-            + this.cost + "][" 
-            + this.category + "]["
+        String result = super.toString() + "["
             + totalLength() + "]\n";
 
         result += "Artists: ";
